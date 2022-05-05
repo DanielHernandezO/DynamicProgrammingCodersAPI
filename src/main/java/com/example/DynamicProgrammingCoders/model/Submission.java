@@ -21,8 +21,8 @@ public class Submission {
     private Integer status;
     private Integer tries;
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User userId;
+    @JoinColumn(name = "user_name")
+    private User userName;
     @ManyToOne
     @JoinColumn(name="contest_id")
     private ContestInformation contestId;

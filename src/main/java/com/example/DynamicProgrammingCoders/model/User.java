@@ -15,20 +15,22 @@ import java.util.List;
 @EqualsAndHashCode
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 @Entity
-@Table(name = "users")
+@Table(name="users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String password;
     private String userName;
+    private String name;
+    private String LastName;
+    private String email;
+    private String password;
     @CreatedDate
-    @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
-    @OneToMany(mappedBy = "userId")
+    @OneToMany(mappedBy = "userName")
     List<WroteProblem> wroteProblems;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "userName")
     private List<Submission> userId;
-    @OneToMany(mappedBy = "userId")
+    @OneToMany(mappedBy = "userName")
     private List<Contest> contests;
 }

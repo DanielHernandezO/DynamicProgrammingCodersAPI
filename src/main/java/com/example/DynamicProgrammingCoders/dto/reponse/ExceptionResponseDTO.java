@@ -1,4 +1,4 @@
-package com.example.DynamicProgrammingCoders.dto;
+package com.example.DynamicProgrammingCoders.dto.reponse;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
@@ -8,15 +8,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-
-@Getter @Setter
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class ProblemDTO implements Serializable {
-    private Integer problemId;
-    private Double executionTime;
-    private Integer memoryLimit;
-    private String title;
-    private String difficulty;
+public class ExceptionResponseDTO implements Serializable {
+    private String message, status;
 }

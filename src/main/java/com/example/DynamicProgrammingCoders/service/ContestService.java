@@ -21,7 +21,7 @@ public class ContestService implements IContestService{
     @Override
     public ListResponseDTO getUserContest(ParamRequestDTO idUser) {
         ListResponseDTO responseDTO = new ListResponseDTO();
-        List<Contest> contests = contestRepository.findAllByContestId((Integer) idUser.getParam());
+        List<Contest> contests = contestRepository.findAllByContestId(idUser.getParam().toString());
         responseDTO.setList(getContestInformationListDTO(contests));
         return responseDTO;
     }

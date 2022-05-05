@@ -18,7 +18,7 @@ public class ContestController {
         this.contestService = contestService;
     }
     @GetMapping("/user/cotests/{idUser}")
-    public ResponseEntity<ListResponseDTO> getUserContest(@PathVariable Integer idUser){
+    public ResponseEntity<ListResponseDTO> getUserContest(@PathVariable String idUser){
         ListResponseDTO dto = contestService.getUserContest(new ParamRequestDTO(idUser));
         return new ResponseEntity<>(dto, HttpStatus.ACCEPTED);
     }

@@ -8,15 +8,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-
-@Getter @Setter
+@Setter @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class ProblemDTO implements Serializable {
-    private Integer problemId;
-    private Double executionTime;
-    private Integer memoryLimit;
-    private String title;
-    private String difficulty;
+public class UserDTO implements Serializable {
+    private String userName;
+    private String name;
+    private String LastName;
+    private String email;
+    private String password;
 }

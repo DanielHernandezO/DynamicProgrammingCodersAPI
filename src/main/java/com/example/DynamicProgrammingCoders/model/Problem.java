@@ -19,6 +19,7 @@ public class Problem {
     private Double executionTime;
     private Integer memoryLimit;
     private String title;
+    private String difficulty;
     @OneToMany(mappedBy = "problemId")
     private List<ProblemCategory> problemCategories;
     @OneToMany(mappedBy = "problemId")

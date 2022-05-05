@@ -22,6 +22,6 @@ public class WroteProblem {
     @JoinColumn(name= "problem_id")
     private Problem problemId;
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    private User userId;
+    @JoinColumn(name = "user_name")
+    private User userName;
 }
