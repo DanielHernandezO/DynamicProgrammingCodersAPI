@@ -32,7 +32,7 @@ public class UserService implements IUserService{
         List<User> users = userRepository.findAll();
         boolean flag =false;
         for(User user1: users){
-            if(user1.getUserName().equalsIgnoreCase(user.getUserName()))flag = true;
+            if(user1.getUserName()!= null && user1.getUserName().equalsIgnoreCase(user.getUserName()))flag = true;
         }
         if(flag) throw new UserAlreadyExist("The user already exist");
         User newUser = mapper.map(user,User.class);

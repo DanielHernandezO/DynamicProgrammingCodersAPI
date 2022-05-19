@@ -17,15 +17,12 @@ import java.util.List;
 @Table(name = "submissions")
 public class Submission {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private Integer status;
-    private Integer tries;
     @ManyToOne
     @JoinColumn(name = "user_name")
     private User userName;
-    @ManyToOne
-    @JoinColumn(name="contest_id")
-    private ContestInformation contestId;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name= "problem_id")
     private Problem problemId;

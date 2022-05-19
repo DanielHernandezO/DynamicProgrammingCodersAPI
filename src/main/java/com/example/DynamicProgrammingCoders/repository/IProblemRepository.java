@@ -12,5 +12,5 @@ import java.util.Set;
 @Repository
 public interface IProblemRepository extends JpaRepository<Problem,Integer> {
     @Query("select s.problemId from Submission s where s.userName.userName=:userId and s.status=1")
-    Set<Problem> getProblemsSolvedByAnUser(@Param("userId")Integer userId);
+    Set<Problem> getProblemsSolvedByAnUser(@Param("userId")String userId);
 }

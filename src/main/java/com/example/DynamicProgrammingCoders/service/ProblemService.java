@@ -41,7 +41,7 @@ public class ProblemService implements IProblemService{
     @Override
     public ListResponseDTO getUserProblemsSolved(ParamRequestDTO userId) {
         ListResponseDTO dto = new ListResponseDTO();
-        Set<Problem> problemsSolved = problemRepository.getProblemsSolvedByAnUser((Integer)userId.getParam());
+        Set<Problem> problemsSolved = problemRepository.getProblemsSolvedByAnUser(userId.getParam().toString());
         List<ProblemDTO> problemsResponse = getListDTO(problemsSolved);
         dto.setList(problemsResponse);
         return dto;

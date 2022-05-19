@@ -30,7 +30,7 @@ public class ProblemController {
     }
     @CrossOrigin(origins = "*")
     @GetMapping("/problem/solved/{userId}")
-    public ResponseEntity<ListResponseDTO> getUserProblemsSolved(@PathVariable Integer userId){
+    public ResponseEntity<ListResponseDTO> getUserProblemsSolved(@PathVariable String userId){
         ListResponseDTO dto = problemService.getUserProblemsSolved(new ParamRequestDTO(userId));
         return new ResponseEntity<>(dto,HttpStatus.ACCEPTED);
     }
