@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class GlobalExceptionHandler {
     @ExceptionHandler(ProblemDoesntExist.class)
     public ResponseEntity<?> ProblemDoesntExist(Exception e){
-        return new ResponseEntity<>(new ExceptionResponseDTO(e.getMessage(),"400"), HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(new ExceptionResponseDTO(e.getMessage(),"404"), HttpStatus.NOT_FOUND);
     }
     @ExceptionHandler(UserDoesntExist.class)
     public ResponseEntity<?> UserDoesntExist(Exception e){
-        return new ResponseEntity<>(new ExceptionResponseDTO(e.getMessage(),"400"), HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(new ExceptionResponseDTO(e.getMessage(),"404"), HttpStatus.NOT_FOUND);
     }
     @ExceptionHandler(UserAlreadyExist.class)
     public ResponseEntity<?> UserAlreadyExist(Exception e){

@@ -16,16 +16,19 @@ public class UserController {
     public UserController(IUserService userService){
         this.userService=userService;
     }
+    @CrossOrigin(origins = "*")
     @GetMapping("/user/checkPassword/{userName}")
     public ResponseEntity checkPassword(@PathVariable String userName){
         PasswordResponseDTO dto = userService.checkPassword(new ParamRequestDTO(userName));
         return new ResponseEntity(dto, HttpStatus.ACCEPTED);
     }
+    @CrossOrigin(origins = "*")
     @PostMapping("/user/create")
     public ResponseEntity createUser(@RequestBody UserDTO user){
         MessageResponseDTO dto = userService.createUser(user);
         return new ResponseEntity(dto,HttpStatus.CREATED);
     }
+    @CrossOrigin(origins = "*")
     @GetMapping("/user/getbyid/{userName}")
     public ResponseEntity getUserById(@PathVariable String userName){
         UserDTO dto = userService.getUserById(new ParamRequestDTO(userName));

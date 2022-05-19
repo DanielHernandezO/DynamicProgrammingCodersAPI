@@ -25,6 +25,7 @@ public class User {
     private String LastName;
     private String email;
     private String password;
+    private String salt;
     @CreatedDate
     private Date createdAt;
     @OneToMany(mappedBy = "userName")
